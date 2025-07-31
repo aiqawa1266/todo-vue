@@ -19,8 +19,11 @@ input {
   margin-right: 5px;
 }
 
-button {
-  padding: 8px;
+button:disabled,
+.btn-disable {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+  color: #666;
 }
 
 ul {
@@ -31,4 +34,38 @@ ul {
 li {
   list-style-type: none;
   margin-bottom: 10px;
+}
+
+.coret {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.tugas-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.tugas-konten {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tugas-item button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tugas-item button:hover {
+  background-color: #e60000;
 }
