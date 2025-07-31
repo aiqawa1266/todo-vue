@@ -8,15 +8,29 @@
   </head>
   <body>
     <div id="app">
-      <h1>To-Do List</h1>
+      <h1>To-Do List Me</h1>
 
       <input v-model="tugasBaru" placeholder="Tambah tugas" />
       <button @click="tambahTugas">Tambah</button>
 
       <ul>
-        <li v-for="(tugas, index) in daftarTugas" :key="index">
-          {{ tugas }}
-          <button @click="hapusTugas(index)">Hapus</button>
+        <li
+          v-for="(tugas, index) in daftarTugas"
+          :key="index"
+          class="tugas-item"
+        >
+          <div class="tugas-konten">
+            <input type="checkbox" v-model="tugas.selesai" />
+            <span :class="{ coret: tugas.selesai }">{{ tugas.nama }}</span>
+            <small class="tanggal-tugas"></small>
+          </div>
+          <button
+            @click="hapusTugas(index)"
+            :disabled="!tugas.selesai"
+            :class="{ 'btn-disable': !tugas.selesai }"
+          >
+            Hapus
+          </button>
         </li>
       </ul>
     </div>
